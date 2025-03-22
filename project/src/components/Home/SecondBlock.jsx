@@ -23,7 +23,6 @@ function SecondBlock() {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    // Dynamic margin-bottom to keep blocks separated
     const dynamicMarginBottom = `${Math.max(20, baseMargin - shrinkOffset * 0.05)}px`;
 
     const fadeInUp = {
@@ -40,11 +39,10 @@ function SecondBlock() {
             animate={isInView ? "visible" : "hidden"}
             exit="exit"
         > 
-            {/* Background Image - Slides in/out */}
             <motion.img 
                 src={myImage} 
                 alt="Background" 
-                className="w-[650px] h-[850px] absolute top-[-120px] mt-25 ml-6 z-[10] object-cover"
+                className="w-[650px] mb-[10px] h-[850px] absolute top-[-120px] mt-25 ml-6 z-[10] object-cover"
                 variants={{
                     hidden: { x: -200, opacity: 0 },
                     visible: { x: 0, opacity: 1, transition: { duration: 1 } },
@@ -53,13 +51,9 @@ function SecondBlock() {
             />
 
             <div className="relative flex flex-col">
-                {/* First Div */}
                 <motion.div 
-                    style={{ 
-                        left: `${806 - shrinkOffset * 1.64}px`,
-                        marginBottom: dynamicMarginBottom
-                    }} 
-                    className="w-[386px] bg-[#28b30e] p-[10.99px_14.65px] gap-[10.07px]  h-[206.05px] absolute top-[30.73px] left-[757px] rounded-[11.91px] z-[30]"
+                    style={{ left: `${806 - shrinkOffset * 1.64}px`, marginBottom: dynamicMarginBottom }}
+                    className="w-[386px] bg-[#28b30e] p-[10.99px_14.65px] gap-[10.07px] h-[206.05px] absolute top-[30.73px] left-[757px] rounded-[11.91px] z-[30]"
                     variants={fadeInUp}
                 >
                     <p className="font-bold text-[87.92px] leading-[100%] uppercase">3x</p>
@@ -68,14 +62,9 @@ function SecondBlock() {
                     </p>
                 </motion.div>
 
-                {/* Second Div */}
                 <motion.div 
-                    style={{ 
-                        left: `${506 - shrinkOffset * 1.1}px`,
-                        marginBottom: dynamicMarginBottom
-                    }} 
-                    className="w-[492px] h-[173.53px] absolute top-[calc(130.73px+100px-5px)] left-[506px] 
-                        rounded-[11.24px] bg-[#3A3A3A]  p-[9.51px_13.83px] gap-[9.51px] text-white shadow-md z-[20] -mt-[5px]"
+                    style={{ left: `${506 - shrinkOffset * 1.1}px`, marginBottom: dynamicMarginBottom }}
+                    className={`w-[492px] mb-[10px] mb-${5} h-[173.53px] absolute top-[calc(130.73px+100px-5px)] left-[506px] rounded-[11.24px] bg-[#3A3A3A] p-[9.51px_13.83px] gap-[9.51px] text-white shadow-md z-[20] -mt-[5px]`}
                     variants={fadeInUp}
                     transition={{ delay: 0.2 }}
                 >
@@ -85,14 +74,9 @@ function SecondBlock() {
                     </p>
                 </motion.div>
 
-                {/* Third Div */}
                 <motion.div 
-                    style={{ 
-                        left: `${857 - shrinkOffset * 1.76}px`,
-                        marginBottom: dynamicMarginBottom
-                    }} 
-                    className="w-[380.02px] h-[186.12px] absolute left-[857px] top-[calc(30.73px+180px+170px-10px)] 
-                        rounded-[12.85px] bg-[#2D2D2D] p-[8.84px_12.85px] gap-[10.44px]  text-white flex flex-col justify-between z-[11] -mt-[10px]"
+                    style={{ left: `${857 - shrinkOffset * 1.76}px`, marginBottom: dynamicMarginBottom }}
+                    className="w-[380.02px] h-[186.12px] mt-3 absolute left-[857px] top-[calc(30.73px+180px+170px-10px)] rounded-[12.85px] bg-[#2D2D2D] p-[8.84px_12.85px] gap-[10.44px] text-white flex flex-col justify-between z-[11] -mt-[10px]"
                     variants={fadeInUp}
                     transition={{ delay: 0.4 }}
                 >
@@ -102,22 +86,20 @@ function SecondBlock() {
                     </p>
                 </motion.div>
 
-                {/* Fourth Div */}
-                <motion.div 
-                    style={{ 
-                        left: `${475 - shrinkOffset}px`,
-                        marginBottom: dynamicMarginBottom
-                    }}
-                    className="w-[446px] h-[181px] absolute top-[calc(130.73px+400px-5px)] left-[475px] 
-                        rounded-[10px] bg-white z-[10] -mt-[10px]  p-[11px_16px] gap-[11px]"
+               <motion.div 
+                    style={{ left: `${475 - shrinkOffset}px`, marginBottom: dynamicMarginBottom }}
+                    className={`mt-${2} w-[446px] h-[181px]  absolute  top-[calc(130.73px+400px-5px)] left-[475px] rounded-[10px] bg-white z-[10] -mt-[10px] p-[11px_22px] gap-[11px]`}
                     variants={fadeInUp}
                     transition={{ delay: 0.6 }}
                 >
-                    <p className="font-bold text-[#28B30E] text-[51.42px] leading-[100%] uppercase">37%</p>
+                   <div>
+                   <p className="font-bold text-[#28B30E] text-[51.42px] leading-[100%] uppercase">37%</p>
                     <p className="tophead5 font-normal text-[#28B30E] text-[31.13px] pt-5 leading-[100%] capitalize">
                         Of the world's largest companies have a public net zero target.<br/> Nearly all are off track.
                     </p>
+                   </div>
                 </motion.div>
+               
             </div>
         </motion.div>
     );
