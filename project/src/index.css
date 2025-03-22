@@ -1,40 +1,16 @@
 @import "tailwindcss";
 
-
-
-.bingo{
+.tophead {
   font-family: "DM Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
+  font-size: 20px;
 }
-.bingo1{
+.tophead2 {
   font-family: "DM Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-}
-@font-face {
-  font-family: 'CustomFont';
-  src: url('fonts/aeoniktrial-light.otf') format('opentype'); 
-  font-weight: 300; /* Adjusted to match Light weight */
-  font-style: normal;
-}
-@font-face {
-  font-family: 'CustomFont2';
-  src: url('fonts/aeoniktrial-bold.otf') format('opentype'); 
-  font-weight: 700;
-  font-style: normal;
-}
-.bingo3 {
-  font-family: 'CustomFont', sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300; /* Matching the actual font weight */
-  font-style: normal;
-}
-.bingo4 {
-  font-family: 'CustomFont2', sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700; /* Matching the actual font weight */
-  font-style: normal;
+  font-size: 16px;
 }

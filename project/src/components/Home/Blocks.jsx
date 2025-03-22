@@ -1,5 +1,4 @@
-import React from 'react'
-import SecondBlock from './SecondBlock';
+import React from 'react';
 
 const data = [
     {
@@ -26,26 +25,25 @@ const data = [
         "title": "AI-Driven Insights",
         "description": "Leverage AI-driven insights to uncover hidden patterns, optimize sustainability strategies, and drive impactful decision-making."
     }
-]
+];
 
 function Blocks() {
     return (
-        <div className="flex justify-center flex-wrap items-center mb-[16px]">
-            <div className="grid grid-cols-3 gap-4 w-[1320px]  h-[659px] p-4">
+        <div className="flex justify-center items-center px-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1320px] w-full">
                 {data.map((item, index) => (
                     <div
                         key={index}
-                        className="border p-4 h-[321.5px] border-none rounded-[12px]   bg-white"
+                        className="border p-6 min-h-[280px] sm:min-h-[300px] lg:min-h-[350px] 
+                        border-none rounded-[12px] bg-white shadow-md transition-all duration-300 ease-in-out"
                     >
-                        <h3 className="bingo4 text-[#28B30E] font-bold text-2xl">{item.title}</h3>
-                        <p className="bingo1 text-[#2D2D2D] font-sans text-base">{item.description}</p>
+                        <h3 className="text-[#28B30E] leading-tight font-bold text-lg sm:text-xl lg:text-2xl">{item.title}</h3>
+                        <p className="tophead2 text-[#2D2D2D] leading-tight font-sans text-sm sm:text-base lg:text-lg">{item.description}</p>
                     </div>
                 ))}
-                
             </div>
-          
-
         </div>
     );
 }
+
 export default Blocks;

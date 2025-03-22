@@ -50,7 +50,7 @@ function SecondBlock() {
 
                 {/* Fourth Div - Below Third */}
                 <div className="w-[446px] h-[181px] absolute top-[calc(130.73px+220px+170px+180px-10px)] 
-                    left-[559px] rounded-[10px] p-[11px_16px] gap-[11px] bg-white shadow-md -mt-[10px]">
+                    left-[559px] rounded-[10px] p-[11px_16px] gap-[11px] bg-white shadow-md  z-[1] -mt-[10px]">
                     <p className="font-[Aeonik TRIAL] text-[#28B30E] font-bold text-[51.42px] leading-[100%] tracking-[1%] uppercase">
                         37%
                     </p>
