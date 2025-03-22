@@ -52,7 +52,7 @@ function SecondBlock() {
 
             <div className="relative flex flex-col">
                 <motion.div 
-                    style={{ left: `${806 - shrinkOffset * 1.64}px`, marginBottom: dynamicMarginBottom }}
+                    style={{ left: `${806 - shrinkOffset * 1.61}px`, marginBottom: dynamicMarginBottom }}
                     className="w-[386px] bg-[#28b30e] p-[10.99px_14.65px] gap-[10.07px] h-[206.05px] absolute top-[30.73px] left-[757px] rounded-[11.91px] z-[30]"
                     variants={fadeInUp}
                 >
@@ -63,7 +63,7 @@ function SecondBlock() {
                 </motion.div>
 
                 <motion.div 
-                    style={{ left: `${506 - shrinkOffset * 1.1}px`, marginBottom: dynamicMarginBottom }}
+                    style={{ left: `${506 - shrinkOffset *.9}px`, marginBottom: dynamicMarginBottom }}
                     className={`w-[492px] mb-[10px] mb-${5} h-[173.53px] absolute top-[calc(130.73px+100px-5px)] left-[506px] rounded-[11.24px] bg-[#3A3A3A] p-[9.51px_13.83px] gap-[9.51px] text-white shadow-md z-[20] -mt-[5px]`}
                     variants={fadeInUp}
                     transition={{ delay: 0.2 }}
@@ -75,8 +75,8 @@ function SecondBlock() {
                 </motion.div>
 
                 <motion.div 
-                    style={{ left: `${857 - shrinkOffset * 1.76}px`, marginBottom: dynamicMarginBottom }}
-                    className="w-[380.02px] h-[186.12px] mt-3 absolute left-[857px] top-[calc(30.73px+180px+170px-10px)] rounded-[12.85px] bg-[#2D2D2D] p-[8.84px_12.85px] gap-[10.44px] text-white flex flex-col justify-between z-[11] -mt-[10px]"
+                    style={{ left: `${857 - shrinkOffset * 1.72}px`, marginBottom: dynamicMarginBottom }}
+                    className="w-[380.02px] h-[186.12px]  absolute left-[857px] top-[calc(30.73px+180px+170px-10px)] rounded-[12.85px] bg-[#2D2D2D] p-[8.84px_12.85px] gap-[10.44px] text-white flex flex-col justify-between z-[11] -mt-[10px]"
                     variants={fadeInUp}
                     transition={{ delay: 0.4 }}
                 >
