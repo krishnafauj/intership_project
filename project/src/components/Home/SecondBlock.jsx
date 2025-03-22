@@ -88,7 +88,7 @@ function SecondBlock() {
 
                <motion.div 
                     style={{ left: `${475 - shrinkOffset}px`, marginBottom: dynamicMarginBottom }}
-                    className={`mt-${2} w-[446px] h-[181px]  absolute  top-[calc(130.73px+400px-5px)] left-[475px] rounded-[10px] bg-white z-[10] -mt-[10px] p-[11px_22px] gap-[11px]`}
+                    className={`mt-${6} w-[446px] h-[181px]  absolute  top-[calc(130.73px+400px-5px)] left-[475px] rounded-[10px] bg-white z-[10] -mt-[10px] p-[11px_22px] gap-[11px]`}
                     variants={fadeInUp}
                     transition={{ delay: 0.6 }}
                 >
