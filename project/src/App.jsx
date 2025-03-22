@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Blocks from './components/Home/Blocks';
 import '@fontsource/dm-sans';
 import '@fontsource/dm-sans/400.css';
@@ -7,8 +7,22 @@ import '@fontsource/dm-sans/700.css';
 import Topblock from './components/Home/Topblock';
 import SecondBlock from './components/Home/SecondBlock';
 import './App.css';
+import Lenis from "@studio-freight/lenis";
 
 function App() {
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2, // Adjust smoothness speed
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom easing
+      smooth: true
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+  }, []);
   return (
     <div className="bg-[#f5f5f8]">
       {/* Top Section */}

@@ -1,66 +1,96 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import myImage from '../../assets/images/6aedb0f7fd91444306aedde679c72011.png'; 
 
 function SecondBlock() {
+    const sectionRef = useRef(null);
+    const isInView = useInView(sectionRef, { once: true, margin: "-100px 0px" });
+
+    // Variants for animation
+    const fadeInUp = {
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+    };
+
     return (
-        <div className="min-h-screen relative bg-transparent"> {/* Set bg to transparent */}
-            
-            {/* Background Image - Inside the div but positioned absolutely */}
-            <img 
+        <motion.div 
+            ref={sectionRef}
+            className="min-h-screen relative bg-transparent"
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+        > 
+            {/* Background Image - Appears when scrolled into view */}
+            <motion.img 
                 src={myImage} 
                 alt="Background" 
                 className="w-[650px] h-[850px] absolute top-[-120px] mt-10 ml-6 z-[10] object-cover"
+                variants={{
+                    hidden: { x: -100, opacity: 0 },
+                    visible: { x: 0, opacity: 1, transition: { duration: 5} }
+                }}
             />
 
             <div className="relative">
                 {/* First Div - Highest on Top */}
-                <div className="w-[446px] bg-[#28b30e] h-[246.05px] absolute top-[130.73px] left-[857px] 
-                    rounded-[11.91px] p-[10.99px_14.65px] gap-[10.07px] shadow-md z-[30]">
+                <motion.div 
+                    className="w-[386px] bg-[#28b30e] h-[206.05px] absolute top-[30.73px] left-[757px] 
+                        rounded-[11.91px] p-[10.99px_14.65px] gap-[10.07px]  z-[30]"
+                    variants={fadeInUp}
+                >
                     <p className="font-[Aeonik TRIAL] font-bold text-[87.92px] leading-[100%] tracking-[1%] uppercase">
                         3x
                     </p>
-                    <p className="font-[DM Sans] font-normal text-[29.31px] leading-[100%] tracking-[1%] capitalize">
+                    <p className="tophead5 font-normal text-[35.31px] text-[#2D2D2D] leading-[100%] tracking-[1%] pt-[10px] capitalize">
                         ESG high performers deliver a higher total shareholder return
                     </p>
-                </div>
+                </motion.div>
 
                 {/* Second Div - Below First */}
-                <div className="w-[492px] h-[173.53px] absolute top-[calc(130.73px+220px-5px)] left-[596px] 
-                    rounded-[11.24px] p-[9.51px_13.83px] gap-[9.51px] bg-[#3A3A3A] shadow-md z-[20] -mt-[5px]">
+                <motion.div 
+                    className="w-[492px] h-[173.53px] absolute top-[calc(130.73px+100px-5px)] left-[506px] 
+                        rounded-[11.24px] p-[9.51px_13.83px] gap-[9.51px] bg-[#3A3A3A] shadow md z-[20] -mt-[5px]"
+                    variants={fadeInUp}
+                    transition={{ delay: 0.2 }}
+                >
                     <p className="font-[Aeonik TRIAL] text-white font-bold text-[87.92px] leading-[100%] tracking-[1%] uppercase">
                         98%
                     </p>
-                    <p className="font-[DM Sans] font-normal text-[31.13px] text-[#E2E2E2] leading-[100%] tracking-[1%] capitalize">
+                    <p className="tophead5 font-normal text-[31.13px] text-[#E2E2E2] leading-[100%] tracking-[1%] capitalize">
                         Of CEOs agree sustainability is their responsibility
                     </p>
-                </div>
+                </motion.div>
 
                 {/* Third Div - Below Second */}
-                <div className="w-[380.02px] h-[186.12px] absolute left-[857px] top-[calc(130.73px+220px+170px-10px)] 
-                    rounded-[12.85px] bg-[#3A3A3A] p-[8.84px_12.85px] gap-[10.44px] shadow-md flex flex-col justify-between z-[10] -mt-[10px]">
-
+                <motion.div 
+                    className="w-[380.02px] h-[186.12px] absolute left-[857px] top-[calc(30.73px+180px+170px-10px)] 
+                        rounded-[12.85px] bg-[#2D2D2D] p-[8.84px_12.85px] gap-[10.44px]  flex flex-col justify-between z-[11] -mt-[10px]"
+                    variants={fadeInUp}
+                    transition={{ delay: 0.4 }}
+                >
                     <p className="font-[Aeonik TRIAL] text-white font-bold text-[51.42px] leading-[100%] tracking-[1%] uppercase self-end">
                         18%
                     </p>
-                    <p className="font-[DM Sans] font-normal text-[31.13px] text-[#E2E2E2] leading-[100%] tracking-[1%] text-right self-end capitalize">
+                    <p className="tophead5 font-normal text-[31.13px] text-[#E2E2E2] mt-[-10px] pt-[-10px] leading-[100%] tracking-[1%] text-right self-end capitalize">
                         Of companies are cutting emissions fast enough to reach net zero by 2050
                     </p>
-
-                </div>
+                </motion.div>
 
                 {/* Fourth Div - Below Third */}
-                <div className="w-[446px] h-[181px] absolute top-[calc(130.73px+220px+170px+180px-10px)] 
-                    left-[559px] rounded-[10px] p-[11px_16px] gap-[11px] bg-white shadow-md -mt-[10px]">
+                <motion.div 
+                    className="tophead5 text-[25.71px] w-[446px] h-[181px] absolute top-[calc(130.73px+400px-5px)]  
+                        left-[475px] rounded-[10px] p-[11px_16px] gap-[11px] bg-white  -mt-[10px] z-[10]"
+                    variants={fadeInUp}
+                    transition={{ delay: 0.6 }}
+                >
                     <p className="font-[Aeonik TRIAL] text-[#28B30E] font-bold text-[51.42px] leading-[100%] tracking-[1%] uppercase">
                         37%
                     </p>
-                    <p className="font-[DM Sans] font-normal text-[#28B30E] text-[31.13px] w-full text-[#3A3A3A] leading-[100%] tracking-[1%] capitalize">
-                        Of the world's largest companies have a public net zero target. Nearly all are off track.
+                    <p className="tophead5 font-normal l-[250px] text-[#28B30E] text-[31.13px] w-full  pt-5 leading-[100%] tracking-[1%] capitalize">
+                        Of the world's largest companies have a public net zero target.<br/> Nearly all are off track.
                     </p>
-                </div>
-
+                </motion.div>
             </div>
-        </div>
+        </motion.div>
     );
 }
 
