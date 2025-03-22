@@ -11,17 +11,29 @@ import './App.css';
 import Lenis from "@studio-freight/lenis";
 
 function App() {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < window.screen.width);
 
   useEffect(() => {
-    setIsMobile(window.innerWidth <= 1300);
-
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth < window.screen.width);
     };
-
+    
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2, // Adjust smoothness speed
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom easing
+      smooth: true
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
   }, []);
 
   return (
@@ -34,7 +46,7 @@ function App() {
 
       {/* Conditional Rendering for Blocks */}
       <div className="w-full max-w-[1440px] mx-auto mt-20 md:mt-40 px-4 sm:px-8">
-        {isMobile ? <ThirdBlock /> : <SecondBlock />}
+         <SecondBlock />  
       </div>
 
       {/* Empty Div - Can be used for footer later */}
