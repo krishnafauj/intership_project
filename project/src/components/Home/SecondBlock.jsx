@@ -52,7 +52,7 @@ function SecondBlock() {
 
             <div className="relative flex flex-col">
                 <motion.div 
-                    style={{ left: `${806 - shrinkOffset * 1.61}px`, marginBottom: dynamicMarginBottom }}
+                    style={{ left: `${806 - shrinkOffset * 1.62}px`, marginBottom: dynamicMarginBottom }}
                     className="w-[386px] bg-[#28b30e] p-[10.99px_14.65px] gap-[10.07px] h-[206.05px] absolute top-[30.73px] left-[757px] rounded-[11.91px] z-[30]"
                     variants={fadeInUp}
                 >
@@ -76,7 +76,7 @@ function SecondBlock() {
 
                 <motion.div 
                     style={{ left: `${857 - shrinkOffset * 1.72}px`, marginBottom: dynamicMarginBottom }}
-                    className="w-[380.02px] h-[186.12px]  absolute left-[857px] top-[calc(30.73px+180px+170px-10px)] rounded-[12.85px] bg-[#2D2D2D] p-[8.84px_12.85px] gap-[10.44px] text-white flex flex-col justify-between z-[11] -mt-[10px]"
+                    className={`w-[380.02px] h-[186.12px]  absolute left-[857px] top-[calc(30.73px+180px+170px-10px)] mt-[10px]  rounded-[12.85px] bg-[#2D2D2D] p-[8.84px_12.85px] gap-[10.44px] text-white flex flex-col justify-between z-[11]  l:-mt-[10px]`}
                     variants={fadeInUp}
                     transition={{ delay: 0.4 }}
                 >
