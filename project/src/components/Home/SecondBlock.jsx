@@ -1,15 +1,16 @@
-import React, { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
-import myImage from '../../assets/images/6aedb0f7fd91444306aedde679c72011.png'; 
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import myImage from "../../assets/images/6aedb0f7fd91444306aedde679c72011.png";
 
 function SecondBlock() {
     const sectionRef = useRef(null);
-    const isInView = useInView(sectionRef, { once: true, margin: "-100px 0px" });
+    const isInView = useInView(sectionRef, { margin: "-100px 0px" });
 
-    // Variants for animation
+    // Variants for animation (enter & exit)
     const fadeInUp = {
         hidden: { opacity: 0, y: 50 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+        exit: { opacity: 0, y: 50, transition: { duration: 0.5 } }
     };
 
     return (
@@ -18,20 +19,22 @@ function SecondBlock() {
             className="min-h-screen relative bg-transparent"
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
+            exit="exit"
         > 
-            {/* Background Image - Appears when scrolled into view */}
+            {/* Background Image - Slides in/out */}
             <motion.img 
                 src={myImage} 
                 alt="Background" 
                 className="w-[650px] h-[850px] absolute top-[-120px] mt-10 ml-6 z-[10] object-cover"
                 variants={{
-                    hidden: { x: -100, opacity: 0 },
-                    visible: { x: 0, opacity: 1, transition: { duration: 5} }
+                    hidden: { x: -200, opacity: 0 },
+                    visible: { x: 0, opacity: 1, transition: { duration: 1 } },
+                    exit: { x: -300, opacity: 0, transition: { duration: 3} }
                 }}
             />
 
             <div className="relative">
-                {/* First Div - Highest on Top */}
+                {/* First Div */}
                 <motion.div 
                     className="w-[386px] bg-[#28b30e] h-[206.05px] absolute top-[30.73px] left-[757px] 
                         rounded-[11.91px] p-[10.99px_14.65px] gap-[10.07px]  z-[30]"
@@ -45,7 +48,7 @@ function SecondBlock() {
                     </p>
                 </motion.div>
 
-                {/* Second Div - Below First */}
+                {/* Second Div */}
                 <motion.div 
                     className="w-[492px] h-[173.53px] absolute top-[calc(130.73px+100px-5px)] left-[506px] 
                         rounded-[11.24px] p-[9.51px_13.83px] gap-[9.51px] bg-[#3A3A3A] shadow md z-[20] -mt-[5px]"
@@ -60,10 +63,10 @@ function SecondBlock() {
                     </p>
                 </motion.div>
 
-                {/* Third Div - Below Second */}
+                {/* Third Div */}
                 <motion.div 
                     className="w-[380.02px] h-[186.12px] absolute left-[857px] top-[calc(30.73px+180px+170px-10px)] 
-                        rounded-[12.85px] bg-[#2D2D2D] p-[8.84px_12.85px] gap-[10.44px]  flex flex-col justify-between z-[11] -mt-[10px]"
+                        rounded-[12.85px] bg-[#2D2D2D] p-[8.84px_12.85px] gap-[10.44px] flex flex-col justify-between z-[11] -mt-[10px]"
                     variants={fadeInUp}
                     transition={{ delay: 0.4 }}
                 >
@@ -75,10 +78,10 @@ function SecondBlock() {
                     </p>
                 </motion.div>
 
-                {/* Fourth Div - Below Third */}
+                {/* Fourth Div */}
                 <motion.div 
                     className="tophead5 text-[25.71px] w-[446px] h-[181px] absolute top-[calc(130.73px+400px-5px)]  
-                        left-[475px] rounded-[10px] p-[11px_16px] gap-[11px] bg-white  -mt-[10px] z-[10]"
+                        left-[475px] rounded-[10px] p-[11px_16px] gap-[11px] bg-white -mt-[10px] z-[10]"
                     variants={fadeInUp}
                     transition={{ delay: 0.6 }}
                 >

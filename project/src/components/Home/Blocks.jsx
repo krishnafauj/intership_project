@@ -15,9 +15,9 @@ function Blocks() {
   const { scrollYProgress } = useScroll();
 
   // Define movement transformations
-  const moveLeft = useTransform(scrollYProgress, [0.1, 0.7], [0, -400]); // Move left
-  const moveRight = useTransform(scrollYProgress, [0.1, 0.7], [0, 400]); // Move right
-  const moveUp = useTransform(scrollYProgress, [0.1, 0.7], [0, -200]); // Move up (middle blocks)
+  const moveLeft = useTransform(scrollYProgress, [0.1, 0.4], [0, -150]); // Move left
+  const moveRight = useTransform(scrollYProgress, [0.1, 0.4], [0, 50]); // Move right
+  const moveUp = useTransform(scrollYProgress, [0.1, 0.4], [0, 0]); // Move up (middle blocks)
 
   return (
     <div className="flex justify-center items-center px-10 overflow-hidden">
