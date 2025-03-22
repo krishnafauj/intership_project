@@ -1,5 +1,5 @@
 import React from 'react';
-
+import myImage2 from './image.png';
 const data = [
     {
         "title": "Automated Data Collection",
@@ -30,14 +30,21 @@ const data = [
 function Blocks() {
     return (
         <div className="flex justify-center items-center px-10">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1320px] w-full">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-[1320px] w-full">
                 {data.map((item, index) => (
                     <div
                         key={index}
-                        className="border p-6 min-h-[280px] sm:min-h-[300px] lg:min-h-[350px] 
-                        border-none rounded-[12px] bg-white shadow-md transition-all duration-300 ease-in-out"
+                        className="border p-6 min-h-[280px] sm:min-h-[300px] lg:min-h-[321px] 
+                        border-none rounded-[12px] bg-white  transition-all duration-300 ease-in-out"
                     >
-                        <h3 className="text-[#28B30E] leading-tight font-bold text-lg sm:text-xl lg:text-2xl">{item.title}</h3>
+                        <p className='p-2  bg-[#D1EFCC] w-[60px] h-[60px] rounded-[23px]'>
+                            <img 
+                                            src={myImage2} 
+                                            alt="Background" 
+                                            className="w-[56px] h-[45px] "
+                                        />
+                        </p>
+                        <h3 className="text-[#28B30E] leading-tight font-bold my-5 text-lg sm:text-xl lg:text-2xl">{item.title}</h3>
                         <p className="tophead2 text-[#2D2D2D] leading-tight font-sans text-sm sm:text-base lg:text-lg">{item.description}</p>
                     </div>
                 ))}

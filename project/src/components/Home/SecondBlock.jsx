@@ -9,7 +9,7 @@ function SecondBlock() {
             <img 
                 src={myImage} 
                 alt="Background" 
-                className="w-[818px] h-[996px] absolute top-[-47px] left-[26px] z-[1] object-cover"
+                className="w-[650px] h-[850px] absolute top-[-120px] mt-10 ml-6 z-[10] object-cover"
             />
 
             <div className="relative">
@@ -50,7 +50,7 @@ function SecondBlock() {
 
                 {/* Fourth Div - Below Third */}
                 <div className="w-[446px] h-[181px] absolute top-[calc(130.73px+220px+170px+180px-10px)] 
-                    left-[559px] rounded-[10px] p-[11px_16px] gap-[11px] bg-white shadow-md  z-[1] -mt-[10px]">
+                    left-[559px] rounded-[10px] p-[11px_16px] gap-[11px] bg-white shadow-md -mt-[10px]">
                     <p className="font-[Aeonik TRIAL] text-[#28B30E] font-bold text-[51.42px] leading-[100%] tracking-[1%] uppercase">
                         37%
                     </p>

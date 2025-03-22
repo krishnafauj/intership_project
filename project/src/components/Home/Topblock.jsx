@@ -13,7 +13,7 @@ function Topblock() {
 
       {/* Heading */}
       <div className="flex justify-center items-center">
-        <h5 className="bingo4 text-[#2D2D2D] font-bold px-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-8 md:mb-16 lg:mb-20">
+        <h5 className="tophead3 bingo4 text-[#2D2D2D] font-bold px-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-8 md:mb-16 lg:mb-20">
           Why Carbon Crunch?
         </h5>
       </div>
