@@ -13,11 +13,12 @@ const data = [
 
 function Blocks() {
   const { scrollYProgress } = useScroll();
+  const isMobile = window.innerWidth < 768;
 
-  // Define movement transformations
-  const moveLeft = useTransform(scrollYProgress, [0.1, 0.4], [0, -150]); // Move left
-  const moveRight = useTransform(scrollYProgress, [0.1, 0.4], [0, 50]); // Move right
-  const moveUp = useTransform(scrollYProgress, [0.1, 0.4], [0, 0]); // Move up (middle blocks)
+  // Define transformations based on screen size (only for non-mobile screens)
+  const moveLeft = isMobile ? 0 : useTransform(scrollYProgress, [0.1, 0.4], [0, -150]);
+  const moveRight = isMobile ? 0 : useTransform(scrollYProgress, [0.1, 0.4], [0, 50]);
+  const moveUp = isMobile ? 0 : useTransform(scrollYProgress, [0.1, 0.4], [0, -30]);
 
   return (
     <div className="flex justify-center items-center px-10 overflow-hidden">
@@ -27,12 +28,18 @@ function Blocks() {
           const isMiddle = index % 3 === 1;
           const isRight = index % 3 === 2;
 
-          // Assign motion properties based on position
-          const motionProps = isMiddle
-            ? { style: { y: moveUp } } // Move middle block upwards
-            : isLeft
-            ? { style: { x: moveLeft } } // Move left block to the left
-            : { style: { x: moveRight } }; // Move right block to the right
+          // Remove motion props for mobile screens
+          const motionProps = isMobile
+            ? {} // No animation on mobile
+            : {
+                initial: { opacity: 0, y: 20 },
+                animate: { opacity: 1, y: 0 },
+                transition: { duration: 0.8, ease: "easeOut" },
+                style: {
+                  x: isLeft ? moveLeft : isRight ? moveRight : 0,
+                  y: isMiddle ? moveUp : 0,
+                },
+              };
 
           return (
             <motion.div

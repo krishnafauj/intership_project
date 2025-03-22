@@ -16,7 +16,7 @@ function SecondBlock() {
     return (
         <motion.div 
             ref={sectionRef}
-            className="min-h-screen relative bg-transparent"
+            className="min-h-screen overflow-hidden relative  bg-transparent"
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
             exit="exit"
@@ -25,7 +25,7 @@ function SecondBlock() {
             <motion.img 
                 src={myImage} 
                 alt="Background" 
-                className="w-[650px] h-[850px] absolute top-[-120px] mt-10 ml-6 z-[10] object-cover"
+                className="w-[650px] h-[850px] absolute top-[-120px] mt-25 ml-6 z-[10] object-cover"
                 variants={{
                     hidden: { x: -200, opacity: 0 },
                     visible: { x: 0, opacity: 1, transition: { duration: 1 } },
@@ -36,7 +36,7 @@ function SecondBlock() {
             <div className="relative">
                 {/* First Div */}
                 <motion.div 
-                    className="w-[386px] bg-[#28b30e] h-[206.05px] absolute top-[30.73px] left-[757px] 
+                    className="w-[386px] bg-[#28b30e] h-[206.05px] absolute top-[30.73px]  left-[757px] 
                         rounded-[11.91px] p-[10.99px_14.65px] gap-[10.07px]  z-[30]"
                     variants={fadeInUp}
                 >
