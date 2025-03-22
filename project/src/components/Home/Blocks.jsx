@@ -1,4 +1,5 @@
 import React from 'react'
+import SecondBlock from './SecondBlock';
 
 const data = [
     {
@@ -29,18 +30,21 @@ const data = [
 
 function Blocks() {
     return (
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center flex-wrap items-center mb-[16px]">
             <div className="grid grid-cols-3 gap-4 w-[1320px]  h-[659px] p-4">
                 {data.map((item, index) => (
                     <div
                         key={index}
-                        className="border p-4 h-[321.5px] border-none rounded-[12px] shadow-md  bg-white"
+                        className="border p-4 h-[321.5px] border-none rounded-[12px]   bg-white"
                     >
                         <h3 className="bingo4 text-[#28B30E] font-bold text-2xl">{item.title}</h3>
                         <p className="bingo1 text-[#2D2D2D] font-sans text-base">{item.description}</p>
                     </div>
                 ))}
+                
             </div>
+          
+
         </div>
     );
 }

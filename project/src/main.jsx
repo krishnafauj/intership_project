@@ -5,6 +5,6 @@ import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App className='max-w-screen' />
+    <App className='max-w-screen bg-[#f5f5f8]' />
   </StrictMode>,
 )
