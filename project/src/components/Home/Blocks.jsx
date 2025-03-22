@@ -34,10 +34,10 @@ function Blocks() {
                 {data.map((item, index) => (
                     <div
                         key={index}
-                        className="border p-4 border-none rounded-[12px] shadow-md  bg-white"
+                        className="border p-4 h-[321.5px] border-none rounded-[12px] shadow-md  bg-white"
                     >
-                        <h3 className="bingo4 text-green-600 font-bold text-2xl">{item.title}</h3>
-                        <p className="bingo1 text-gray-600 font-sans text-base">{item.description}</p>
+                        <h3 className="bingo4 text-[#28B30E] font-bold text-2xl">{item.title}</h3>
+                        <p className="bingo1 text-[#2D2D2D] font-sans text-base">{item.description}</p>
                     </div>
                 ))}
             </div>
